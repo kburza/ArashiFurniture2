@@ -5,7 +5,7 @@ const homeSliderData = [
   {
     id: 1,
     bgImg: "/assets/img/slider/03/slider-01.jpg",
-    dark: true,
+    dark: false,
     title: (
       <>
         One-of-a-Kind <br /> Luxury Artisan Tables
