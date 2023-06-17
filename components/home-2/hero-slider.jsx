@@ -4,7 +4,7 @@ import Slider from "react-slick";
 const homeSliderData = [
   {
     id: 1,
-    bgImg: "/assets/img/slider/03/slider-01.jpg",
+    bgImg: "/assets/img/slider/03/slider-01.png",
     dark: false,
     title: (
       <>
