@@ -1,14 +1,23 @@
-import { useDispatch, useSelector } from 'react-redux';
-import Link from 'next/link';
-import { cartProducts, cart_product, decrease_quantity } from '../../../redux/features/cart-slice';
-import { selectProducts, single_product } from '../../../redux/features/product-slice';
-import ProductModal from '../modal/product-modal';
-import { add_to_wishlist } from '../../../redux/features/wishlist-slice';
+import { useDispatch, useSelector } from "react-redux";
+import Link from "next/link";
+import {
+  cartProducts,
+  cart_product,
+  decrease_quantity,
+} from "../../../redux/features/cart-slice";
+import {
+  selectProducts,
+  single_product,
+} from "../../../redux/features/product-slice";
+import ProductModal from "../modal/product-modal";
+import { add_to_wishlist } from "../../../redux/features/wishlist-slice";
 
 const ProductDetails = ({ product }) => {
   const dispatch = useDispatch();
-  const cartItems = useSelector(cartProducts)
-  const selectedItem = cartItems.find(item => Number(item.id) === Number(product.id));
+  const cartItems = useSelector(cartProducts);
+  const selectedItem = cartItems.find(
+    (item) => Number(item.id) === Number(product.id)
+  );
   return (
     <>
       <section className="shop__area pb-65">
@@ -19,12 +28,24 @@ const ProductDetails = ({ product }) => {
                 <div className="product__modal-box d-flex">
                   <div className="product__modal-nav mr-20">
                     <nav>
-                      <div className="nav nav-tabs" id="product-details" role="tablist">
+                      <div
+                        className="nav nav-tabs"
+                        id="product-details"
+                        role="tablist"
+                      >
                         {product?.images?.map((img, index) => (
-                          <a key={index} className={`nav-item nav-link mb-20 ${index === 0 ? 'active' : ''}`}
-                            id={`nav-${index}-tab`} data-bs-toggle="tab" href={`#nav-${index}`}
-                            role="tab" aria-controls={`nav-${index}`}
-                            aria-selected={index === 0 ? 'true' : 'false'}>
+                          <a
+                            key={index}
+                            className={`nav-item nav-link mb-20 ${
+                              index === 0 ? "active" : ""
+                            }`}
+                            id={`nav-${index}-tab`}
+                            data-bs-toggle="tab"
+                            href={`#nav-${index}`}
+                            role="tab"
+                            aria-controls={`nav-${index}`}
+                            aria-selected={index === 0 ? "true" : "false"}
+                          >
                             <div className="product__nav-img w-img">
                               <img src={img.src} alt="" />
                             </div>
@@ -34,21 +55,31 @@ const ProductDetails = ({ product }) => {
                     </nav>
                   </div>
 
-                  <div className="tab-content mb-20" id="product-detailsContent">
-
+                  <div
+                    className="tab-content mb-20"
+                    id="product-detailsContent"
+                  >
                     {product?.images?.map((img, index) => (
-                      <div key={index} className={`tab-pane fade ${index === 0 ? 'show active' : ''} `}
-                        id={`nav-${index}`} role="tabpanel" aria-labelledby={`nav-${index}-tab`}>
+                      <div
+                        key={index}
+                        className={`tab-pane fade ${
+                          index === 0 ? "show active" : ""
+                        } `}
+                        id={`nav-${index}`}
+                        role="tabpanel"
+                        aria-labelledby={`nav-${index}-tab`}
+                      >
                         <div className="product__modal-img w-img">
                           <img src={img.src} alt="" />
-                          {product.product_sale && <div className="product__sale ">
-                            <span className="new">new</span>
-                            <span className="percent">-16%</span>
-                          </div>}
+                          {product.product_sale && (
+                            <div className="product__sale ">
+                              <span className="new">new</span>
+                              <span className="percent">-16%</span>
+                            </div>
+                          )}
                         </div>
                       </div>
                     ))}
-
                   </div>
                 </div>
               </div>
@@ -59,7 +90,7 @@ const ProductDetails = ({ product }) => {
                       <a>{product?.title}</a>
                     </Link>
                   </h4>
-                  <div className="rating rating-shop mb-15">
+                  {/* <div className="rating rating-shop mb-15">
                     <ul>
                       <li><span><i className="fas fa-star"></i></span></li>
                       <li><span><i className="fas fa-star"></i></span></li>
@@ -71,10 +102,12 @@ const ProductDetails = ({ product }) => {
                       {product?.rating} rating(s)
                     </span>
                     <span className="review rating-left"><a href="#">Add your Review</a></span>
-                  </div>
+                  </div> */}
                   <div className="product__price-2 mb-25">
                     <span>${product?.price}</span>
-                    {product.old_price && <span className="old-price">${product?.old_price}</span>}
+                    {product.old_price && (
+                      <span className="old-price">${product?.old_price}</span>
+                    )}
                   </div>
                   <div className="product__modal-des mb-30">
                     <p>{product.desc}</p>
@@ -82,7 +115,9 @@ const ProductDetails = ({ product }) => {
                   <div className="product__modal-form mb-30">
                     <form action="#">
                       <div className="product__modal-input size mb-20">
-                        <label>Size <i className="fas fa-star-of-life"></i></label>
+                        <label>
+                          Size <i className="fas fa-star-of-life"></i>
+                        </label>
                         <select>
                           <option>- Please select -</option>
                           {product?.sizes?.map((size, index) => (
@@ -91,7 +126,9 @@ const ProductDetails = ({ product }) => {
                         </select>
                       </div>
                       <div className="product__modal-input color mb-20">
-                        <label>Color <i className="fas fa-star-of-life"></i></label>
+                        <label>
+                          Color <i className="fas fa-star-of-life"></i>
+                        </label>
                         <select>
                           <option>- Please select -</option>
                           {product?.colors?.map((color, index) => (
@@ -100,7 +137,7 @@ const ProductDetails = ({ product }) => {
                         </select>
                       </div>
                       <div className="product__modal-required mb-5">
-                        <span >Repuired Fiields *</span>
+                        <span>Required Fields *</span>
                       </div>
                       <div className="pro-quan-area d-sm-flex align-items-center">
                         <div className="product-quantity-title">
@@ -108,35 +145,77 @@ const ProductDetails = ({ product }) => {
                         </div>
                         <div className="product-quantity mr-20 mb-20">
                           <div className="cart-plus-minus">
-                            <input type="text" value={selectedItem?.quantity ? selectedItem?.quantity : 0} />
-                            <div onClick={() => dispatch(decrease_quantity(product))} className="dec qtybutton">-</div>
-                            <div onClick={() => dispatch(cart_product(product))} className="inc qtybutton">+</div>
+                            <input
+                              type="text"
+                              value={
+                                selectedItem?.quantity
+                                  ? selectedItem?.quantity
+                                  : 0
+                              }
+                            />
+                            <div
+                              onClick={() =>
+                                dispatch(decrease_quantity(product))
+                              }
+                              className="dec qtybutton"
+                            >
+                              -
+                            </div>
+                            <div
+                              onClick={() => dispatch(cart_product(product))}
+                              className="inc qtybutton"
+                            >
+                              +
+                            </div>
                           </div>
                         </div>
                         <div className="pro-cart-btn">
-                          <a href="#" onClick={() => dispatch(cart_product(product))}
-                            className="add-cart-btn mb-20">+ Add to Cart</a>
+                          <a
+                            href="#"
+                            onClick={() => dispatch(cart_product(product))}
+                            className="add-cart-btn mb-20"
+                          >
+                            + Add to Cart
+                          </a>
                         </div>
                       </div>
                     </form>
                   </div>
-                  <div className="product__tag mb-25">
+                  {/* <div className="product__tag mb-25">
                     <span>Category:</span>
-                    <span><a href="#">Accessories,</a></span>
-                    <span><a href="#">Gaming,</a></span>
-                    <span><a href="#">PC Computers,</a></span>
-                    <span><a href="#">Ultrabooks</a></span>
-                  </div>
-                  <div className="product__share">
+                    <span>
+                      <a href="#">Accessories,</a>
+                    </span>
+                    <span>
+                      <a href="#">Gaming,</a>
+                    </span>
+                    <span>
+                      <a href="#">PC Computers,</a>
+                    </span>
+                    <span>
+                      <a href="#">Ultrabooks</a>
+                    </span>
+                  </div> */}
+                  {/* <div className="product__share">
                     <span>Share :</span>
                     <ul>
-                      <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-                      <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-                      <li><a href="#"><i className="fab fa-behance"></i></a></li>
-                      <li><a href="#"><i className="fab fa-linkedin-in"></i></a></li>
-                      <li><a href="#"><i className="fab fa-youtube"></i></a></li>
+                      <li>
+                        <a href="#">
+                          <i className="fab fa-facebook-f"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i className="fab fa-twitter"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i className="fab fa-linkedin-in"></i>
+                        </a>
+                      </li>
                     </ul>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -149,45 +228,144 @@ const ProductDetails = ({ product }) => {
                 <div className="product__details-tab">
                   <div className="product__details-tab-nav text-center mb-45">
                     <nav>
-                      <div className="nav nav-tabs justify-content-start justify-content-sm-center" id="pro-details" role="tablist">
-                        <a className="nav-item nav-link active" id="des-tab" data-bs-toggle="tab" href="#des" role="tab" aria-controls="des" aria-selected="true">Description</a>
-                        <a className="nav-item nav-link" id="add-tab" data-bs-toggle="tab" href="#add" role="tab" aria-controls="add" aria-selected="false">Additional Information</a>
-                        <a className="nav-item nav-link" id="review-tab" data-bs-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews (4)</a>
+                      <div
+                        className="nav nav-tabs justify-content-start justify-content-sm-center"
+                        id="pro-details"
+                        role="tablist"
+                      >
+                        <a
+                          className="nav-item nav-link active"
+                          id="des-tab"
+                          data-bs-toggle="tab"
+                          href="#des"
+                          role="tab"
+                          aria-controls="des"
+                          aria-selected="true"
+                        >
+                          Description
+                        </a>
+                        <a
+                          className="nav-item nav-link"
+                          id="add-tab"
+                          data-bs-toggle="tab"
+                          href="#add"
+                          role="tab"
+                          aria-controls="add"
+                          aria-selected="false"
+                        >
+                          Additional Information
+                        </a>
+                        {/* <a
+                          className="nav-item nav-link"
+                          id="review-tab"
+                          data-bs-toggle="tab"
+                          href="#review"
+                          role="tab"
+                          aria-controls="review"
+                          aria-selected="false"
+                        >
+                          Reviews (4)
+                        </a> */}
                       </div>
                     </nav>
                   </div>
                   <div className="tab-content" id="pro-detailsContent">
-                    <div className="tab-pane fade show active" id="des" role="tabpanel">
+                    <div
+                      className="tab-pane fade show active"
+                      id="des"
+                      role="tabpanel"
+                    >
                       <div className="product__details-des">
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the {"industry's"} standard dummy text ever since the 1500s, when anunknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.</p>
+                        <p>
+                          At Arashi Furniture, we take pride in creating artisan
+                          tables that are not just pieces of furniture, but
+                          expressions of artistry, craftsmanship, and{" "}
+                          {"nature's"} unparalleled beauty. Every table we
+                          produce speaks to the quality we stand for,
+                          integrating our meticulous attention to detail and the
+                          finest materials to ensure both aesthetic and
+                          structural excellence.
+                        </p>
 
                         <div className="product__details-des-list mb-20">
                           <ul>
-                            <li><span>Claritas est etiam processus dynamicus.</span></li>
-                            <li><span>Qui sequitur mutationem consuetudium lectorum.</span></li>
-                            <li><span>Claritas est etiam processus dynamicus.</span></li>
-                            <li><span>Qui sequitur mutationem consuetudium lectorum.</span></li>
-                            <li><span>Claritas est etiam processus dynamicus.</span></li>
-                            <li><span>Qui sequitur mutationem consuetudium lectorum.</span></li>
+                            <li>
+                              <span>
+                                Deliver a unique design that elegantly combines
+                                the organic allure of wood with the vibrant hues
+                                of high-quality resin.
+                              </span>
+                            </li>
+                            <li>
+                              <span>
+                                Ensure superior craftsmanship with keen
+                                attention to detail, promising robust
+                                construction and a flawless finish.
+                              </span>
+                            </li>
+                            <li>
+                              <span>
+                                Provide an enduring masterpiece that will
+                                withstand the test of time, maintaining its
+                                beauty and structural integrity.
+                              </span>
+                            </li>
+                            <li>
+                              <span>
+                                Qui sequitur mutationem consuetudium lectorum.
+                              </span>
+                            </li>
+                            <li>
+                              <span>
+                                Offer a customizable experience, allowing for
+                                personalized designs that cater to your unique
+                                taste and space requirements.
+                              </span>
+                            </li>
+                            <li>
+                              <span>
+                                Fuse function and form, ensuring that each table
+                                isn't just a stunning piece of art but also
+                                practical furniture.
+                              </span>
+                            </li>
                           </ul>
                         </div>
-                        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release.</p>
+                        <p>
+                          Arashi Furniture invites you to experience the luxury,
+                          art, and quality that define our unique artisan
+                          tables. Join us in this journey of transforming spaces
+                          with timeless pieces that blend the beauty of nature
+                          and the finesse of craftsmanship.
+                        </p>
                       </div>
                     </div>
                     <div className="tab-pane fade" id="add" role="tabpanel">
                       <div className="product__details-add">
                         <ul>
-                          <li><span>Weight</span></li>
-                          <li><span>{product?.weight} KG</span></li>
-                          <li><span>Dimention</span></li>
-                          <li><span>{product?.dimension}</span></li>
-                          <li><span>Size</span></li>
-                          <li><span>XL, XXL, LG, SM, MD</span></li>
+                          <li>
+                            <span>Weight</span>
+                          </li>
+                          <li>
+                            <span>{product?.weight} KG</span>
+                          </li>
+                          <li>
+                            <span>Dimensions</span>
+                          </li>
+                          <li>
+                            <span>{product?.dimension}</span>
+                          </li>
+                          {/* <li>
+                            <span>Size</span>
+                          </li>
+                          <li>
+                            <span>XL, XXL, LG, SM, MD</span>
+                          </li> */}
                         </ul>
                       </div>
                     </div>
                     <div className="tab-pane fade" id="review" role="tabpanel">
-                      <div className="product__details-review">
+                      {/* <div className="product__details-review">
                         <div className="postbox__comments">
                           <div className="postbox__comment-title mb-30">
                             <h3>Reviews (32)</h3>
@@ -195,7 +373,10 @@ const ProductDetails = ({ product }) => {
                           <div className="latest-comments mb-30">
                             <ul>
                               {product?.reviews?.map((review, index) => (
-                                <li key={index} className={review.children ? 'children' : ''}>
+                                <li
+                                  key={index}
+                                  className={review.children ? "children" : ""}
+                                >
                                   <div className="comments-box">
                                     <div className="comments-avatar">
                                       <img src={review.img} alt="" />
@@ -204,23 +385,53 @@ const ProductDetails = ({ product }) => {
                                       <div className="avatar-name">
                                         <h5>{review.name}</h5>
                                         <span> - {review.time} </span>
-                                        <a className="reply" href="#">Leave Reply</a>
+                                        <a className="reply" href="#">
+                                          Leave Reply
+                                        </a>
                                       </div>
                                       <div className="user-rating">
                                         <ul>
-                                          <li><a href="#"><i className="fas fa-star"></i></a></li>
-                                          <li><a href="#"><i className="fas fa-star"></i></a></li>
-                                          <li><a href="#"><i className="fas fa-star"></i></a></li>
-                                          <li><a href="#"><i className="fas fa-star"></i></a></li>
-                                          <li><a href="#"><i className="fal fa-star"></i></a></li>
+                                          <li>
+                                            <a href="#">
+                                              <i className="fas fa-star"></i>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              <i className="fas fa-star"></i>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              <i className="fas fa-star"></i>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              <i className="fas fa-star"></i>
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="#">
+                                              <i className="fal fa-star"></i>
+                                            </a>
+                                          </li>
                                         </ul>
                                       </div>
-                                      <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for <span>“lorem ipsum”</span> will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose.</p>
+                                      <p>
+                                        Many desktop publishing packages and web
+                                        page editors now use Lorem Ipsum as
+                                        their default model text, and a search
+                                        for <span>“lorem ipsum”</span> will
+                                        uncover many web sites still in their
+                                        infancy. Various versions have evolved
+                                        over the years, sometimes by accident,
+                                        sometimes on purpose.
+                                      </p>
                                     </div>
                                   </div>
                                 </li>
                               ))}
-
                             </ul>
                           </div>
                         </div>
@@ -258,7 +469,11 @@ const ProductDetails = ({ product }) => {
                               </ul>
                             </div>
                           </div>
-                          <form id="contacts-form" className="conatct-post-form" action="#">
+                          <form
+                            id="contacts-form"
+                            className="conatct-post-form"
+                            action="#"
+                          >
                             <div className="row">
                               <div className="col-xl-6 col-lg-6 col-md-6">
                                 <div className="contact-icon p-relative contacts-name">
@@ -277,17 +492,27 @@ const ProductDetails = ({ product }) => {
                               </div>
                               <div className="col-xl-12">
                                 <div className="contact-icon p-relative contacts-message">
-                                  <textarea name="comments" id="comments" cols="30" rows="10"
-                                    placeholder="Comments"></textarea>
+                                  <textarea
+                                    name="comments"
+                                    id="comments"
+                                    cols="30"
+                                    rows="10"
+                                    placeholder="Comments"
+                                  ></textarea>
                                 </div>
                               </div>
                               <div className="col-xl-12">
-                                <button className="os-btn os-btn-black" type="submit">Post comment</button>
+                                <button
+                                  className="os-btn os-btn-black"
+                                  type="submit"
+                                >
+                                  Post comment
+                                </button>
                               </div>
                             </div>
                           </form>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -310,12 +535,10 @@ const ProductDetails = ({ product }) => {
 
 export default ProductDetails;
 
-
-
 const RelatedProducts = () => {
   const trendingProducts = useSelector(selectProducts)
-    .filter(item => item.trending)
-    .map(product => product.product)
+    .filter((item) => item.trending)
+    .map((product) => product.product)
     .flat()
     .slice(0, 4);
   const dispatch = useDispatch();
@@ -330,7 +553,10 @@ const RelatedProducts = () => {
                   <h2>Trending Products</h2>
                 </div>
                 <div className="section__sub-title">
-                  <p>Mirum est notare quam littera gothica quam nunc putamus parum claram!</p>
+                  <p>
+                    Dive into the trending marvels of Arashi Furniture, where
+                    design meets craftsmanship.
+                  </p>
                 </div>
               </div>
             </div>
@@ -343,34 +569,57 @@ const RelatedProducts = () => {
                     <Link href={`/product-details/${product.id}`}>
                       <a className="w-img">
                         <img src={product.img} alt="product-img" />
-                        {product.thumb_img &&
-                          <img className="product__thumb-2" src={product.thumb_img} alt="product-img" />
-                        }
+                        {product.thumb_img && (
+                          <img
+                            className="product__thumb-2"
+                            src={product.thumb_img}
+                            alt="product-img"
+                          />
+                        )}
                       </a>
                     </Link>
                     <div className="product__action transition-3">
-                      <button onClick={() => dispatch(add_to_wishlist(product))} href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to Wishlist">
+                      <button
+                        onClick={() => dispatch(add_to_wishlist(product))}
+                        href="#"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="Add to Wishlist"
+                      >
                         <i className="fal fa-heart"></i>
                       </button>
                       <Link href={`/product-details/${product.id}`}>
-                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="Details">
+                        <a
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Details"
+                        >
                           <i className="fal fa-link"></i>
                         </a>
                       </Link>
                       {/* <!-- Button trigger modal --> */}
-                      <a onClick={() => dispatch(single_product(product.id))} href="#" data-bs-toggle="modal" data-bs-target="#productModalId">
+                      <a
+                        onClick={() => dispatch(single_product(product.id))}
+                        href="#"
+                        data-bs-toggle="modal"
+                        data-bs-target="#productModalId"
+                      >
                         <i className="fal fa-search"></i>
                       </a>
                     </div>
 
-                    {product.product__sale && <div className="product__sale">
-                      {product.product__sale.map((item, index) => (
-                        <span key={index} className={`${item === 'new' ? 'new' : 'percent'}`}>
-                          {item}
-                        </span>
-                      ))}
-                    </div>}
-
+                    {product.product__sale && (
+                      <div className="product__sale">
+                        {product.product__sale.map((item, index) => (
+                          <span
+                            key={index}
+                            className={`${item === "new" ? "new" : "percent"}`}
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                   <div className="product__content p-relative">
                     <div className="product__content-inner">
@@ -381,22 +630,25 @@ const RelatedProducts = () => {
                       </h4>
                       <div className="product__price transition-3">
                         <span>${product.price}</span>
-                        {product.old_price && <span className="old-price">${product.old_price}</span>}
+                        {product.old_price && (
+                          <span className="old-price">
+                            ${product.old_price}
+                          </span>
+                        )}
                       </div>
                     </div>
                     <div className="add-cart p-absolute transition-3">
-                      <button onClick={() => dispatch(cart_product(product))}>+ Add to Cart</button>
+                      <button onClick={() => dispatch(cart_product(product))}>
+                        + Add to Cart
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
             ))}
-
           </div>
         </div>
       </section>
-
-
     </>
-  )
-}
+  );
+};

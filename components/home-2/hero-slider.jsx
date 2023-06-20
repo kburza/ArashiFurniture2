@@ -91,7 +91,7 @@ const HeroSlider = () => {
                           <h2>{slider.title}</h2>
                           <p>{slider.subtitle} </p>
                           <div className="hero-slider-btn">
-                            <Link href="/shop">
+                            <Link href="/shop-4-col">
                               <a
                                 className={`os-btn ${
                                   slider.dark ? "os-btn-white" : "os-btn-2"
