@@ -6,24 +6,12 @@ const footerWidget = [
   {
     id: 1,
     title: "information",
-    footer__links: [
-      { list: "About Us" },
-      { list: "Careers" },
-      { list: "Delivery Inforamtion" },
-      { list: "Privacy Policy" },
-      { list: "Terms & Condition" },
-    ],
+    footer__links: [{ list: "About" }, { list: "Blog" }],
   },
   {
     id: 2,
     title: "Customer Service",
-    footer__links: [
-      { list: "Shipping Policy" },
-      { list: "Help & Contact Us" },
-      { list: "Returns & Refunds" },
-      { list: "Online Stores" },
-      { list: "Terms & Conditions" },
-    ],
+    footer__links: [{ list: "Shipping Policy" }, { list: "Contact Us" }],
   },
 ];
 
@@ -45,9 +33,9 @@ const Footer = ({ df }) => {
                   </div>
                   <div className="footer__widget-content">
                     <p>
-                      Outstock is a premium Templates theme with advanced admin
-                      module. It’s extremely customizable, easy to use and fully
-                      responsive and retina ready.
+                      Arashi Furniture merges art and luxury, crafting unique,
+                      high-quality wooden and resin tables that transform spaces
+                      and tell stories of nature's beauty.
                     </p>
                     <div className="footer__contact">
                       <ul>
@@ -56,10 +44,7 @@ const Footer = ({ df }) => {
                             <i className="fal fa-map-marker-alt"></i>
                           </div>
                           <div className="text">
-                            <span>
-                              Add: 1234 Heaven Stress, Beverly Hill, Melbourne,
-                              USA.
-                            </span>
+                            <span>Ontario, Canada</span>
                           </div>
                         </li>
                         <li>
@@ -67,7 +52,7 @@ const Footer = ({ df }) => {
                             <i className="fal fa-envelope-open-text"></i>
                           </div>
                           <div className="text">
-                            <span>Email: Contact@basictheme.com</span>
+                            <span>arashiartdecor@gmail.com</span>
                           </div>
                         </li>
                         <li>
@@ -75,7 +60,7 @@ const Footer = ({ df }) => {
                             <i className="fal fa-phone-alt"></i>
                           </div>
                           <div className="text">
-                            <span>Phone Number: (800) 123 456 789</span>
+                            <span>(416) 994 9291</span>
                           </div>
                         </li>
                       </ul>

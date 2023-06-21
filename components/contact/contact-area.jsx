@@ -1,23 +1,22 @@
 import ContactForm from "../common/form/contact-form";
 
-
 const contactInfo = [
   {
-    icon: 'fal fa-map-marker-alt',
-    title: 'Address:',
-    subtitle: '1310 Martley Drive, Mississauga, Ontario, Canada.'
+    icon: "fal fa-map-marker-alt",
+    title: "Address:",
+    subtitle: "1310 Martley Drive, Mississauga, Ontario, Canada.",
   },
   {
-    icon: 'fal fa-envelope-open-text',
-    title: 'Email:',
-    subtitle: 'arashiartdecor@gmail.com'
+    icon: "fal fa-envelope-open-text",
+    title: "Email:",
+    subtitle: "arashiartdecor@gmail.com",
   },
   {
-    icon: 'fal fa-phone-alt',
-    title: 'Phone #:',
-    subtitle: '(416) 994 9291'
+    icon: "fal fa-phone-alt",
+    title: "Phone #:",
+    subtitle: "(416) 994 9291",
   },
-]
+];
 
 const ContactArea = () => {
   return (
@@ -29,7 +28,7 @@ const ContactArea = () => {
               <div className="contact__info">
                 <h3>Find us here.</h3>
                 <ul className="mb-55">
-                  {contactInfo.map(item => (
+                  {contactInfo.map((item) => (
                     <li key={item.title} className="d-flex mb-35">
                       <div className="contact__info-icon mr-20">
                         <i className={item.icon}></i>
@@ -41,14 +40,60 @@ const ContactArea = () => {
                     </li>
                   ))}
                 </ul>
-                <p>Reach out to Arashi Furniture and start your journey to owning a bespoke piece of artisan luxury. We're eager to answer your questions, discuss your vision, and create the perfect table or accessory tailored to your preferences. Contact us today and let's bring your unique furniture dreams to life.</p>
+                <p>
+                  Connect with Arashi Furniture and embark on a journey towards
+                  owning a truly bespoke piece of artisan luxury. We specialize
+                  in creating custom tables designed to your exact
+                  specifications. Our team is eager to answer your questions,
+                  collaborate on your vision, and craft the perfect table or
+                  accessory that reflects your unique style and preferences.
+                  Whether you have a specific design in mind or want to explore
+                  creative possibilities, we're here to help. Contact us today,
+                  and together, let's turn your dream furniture into a reality.
+                </p>
 
                 <div className="contact__social">
                   <ul>
-                  <li><a href="https://www.facebook.com/people/Arashi-Art/pfbid02BVniveuPwKeZpfdgXhZqd4iotSQFa1wkTEUmDWigVy7FhPujzmZ2i2TPQv7vvNJul/" target="_blank"><i className="fab fa-facebook-f"></i></a></li>
-                    <li><a href="https://www.instagram.com/arashiartdecor/" target="_blank"><i className="fab fa-instagram"></i></a></li>
-                    <li><a href="https://twitter.com/arashiartdecor" target="_blank"><i className="fab fa-twitter"></i></a></li>
-                    <li><a href="https://www.tiktok.com/@arashiartdecor" target="_blank"><i className="fab fa-tiktok"></i></a></li>
+                    <li>
+                      <a
+                        href="https://www.facebook.com/people/Arashi-Art/pfbid02BVniveuPwKeZpfdgXhZqd4iotSQFa1wkTEUmDWigVy7FhPujzmZ2i2TPQv7vvNJul/"
+                        target="_blank"
+                      >
+                        <i className="fab fa-facebook-f"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.instagram.com/arashiartdecor/"
+                        target="_blank"
+                      >
+                        <i className="fab fa-instagram"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.linkedin.com/in/arashiartdecor/"
+                        target="_blank"
+                      >
+                        <i className="fab fa-linkedin"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://twitter.com/arashiartdecor"
+                        target="_blank"
+                      >
+                        <i className="fab fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.tiktok.com/@arashiartdecor"
+                        target="_blank"
+                      >
+                        <i className="fab fa-tiktok"></i>
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -57,7 +102,7 @@ const ContactArea = () => {
               <div className="contact__form">
                 <h3>Contact Us.</h3>
                 {/* contact form stat */}
-                <ContactForm/>
+                <ContactForm />
                 {/* contact form stat */}
                 <p className="ajax-response"></p>
               </div>
@@ -70,4 +115,3 @@ const ContactArea = () => {
 };
 
 export default ContactArea;
-
