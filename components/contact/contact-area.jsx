@@ -3,8 +3,8 @@ import ContactForm from "../common/form/contact-form";
 const contactInfo = [
   {
     icon: "fal fa-map-marker-alt",
-    title: "Address:",
-    subtitle: "1310 Martley Drive, Mississauga, Ontario, Canada.",
+    title: "Location:",
+    subtitle: "Mississauga, Ontario, Canada",
   },
   {
     icon: "fal fa-envelope-open-text",

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const ContactMap = () => {
   return (
@@ -8,7 +8,7 @@ const ContactMap = () => {
           <div className="row g-0">
             <div className="col-xl-12">
               <div className="contact__map-wrapper p-relative">
-              <iframe src="https://maps.google.com/maps?hl=en&amp;q=1310+Martley+Drive+Mississauga+Ontario+Canada&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"></iframe>
+                <iframe src="https://maps.google.com/maps?hl=en&amp;q=Mississauga+Ontario+Canada&amp;ie=UTF8&amp;t=&amp;z=10&amp;iwloc=B&amp;output=embed"></iframe>
               </div>
             </div>
           </div>

@@ -1,18 +1,22 @@
-import React from 'react';
-import Footer from '../../layout/footers/footer';
-import Header from '../../layout/headers/header';
-import Breadcrumb from '../common/breadcrumb';
-import ShopProduct from '../common/product/shop-product';
+import React from "react";
+import Footer from "../../layout/footers/footer";
+import Header from "../../layout/headers/header";
+import BreadcrumbShop from "../common/breadcrumbshop";
+import ShopProduct from "../common/product/shop-product";
 
 const index = () => {
   return (
     <>
-      <Header/>
+      <Header />
       <main>
-        <Breadcrumb title={'Shop'} subtitle={'Shop'} />
-        <ShopProduct/>
+        <BreadcrumbShop
+          title={"Shop"}
+          subtitle={"Shop"}
+          img="/assets/img/page-title/page-title-2.jpg"
+        />
+        <ShopProduct />
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 };

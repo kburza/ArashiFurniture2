@@ -15,27 +15,16 @@ const nav_menus = [
   //   ]
   // },
   {
-    link: '/shop',
-    title: 'Shop',
-    hasDropdown: true,
+    link: "/shop",
+    title: "Shop",
+    hasDropdown: false,
     megamenu: false,
     dropdownItems: [
       {
-        link: '/shop-4-col',
-        title: 'Dining Tables',
+        link: "/shop",
+        title: "Dining Tables",
       },
-      {
-        link: '/shop-4-col',
-        title: 'Coffee Tables',
-      },
-      {
-        link: '/shop-4-col',
-        title: 'Miscellaneous',
-      },
-      {
-        link: '/shop-4-col',
-        title: 'View All',
-      },
+
       // {
       //   link: '/shop',
       //   title: 'Our Products',
@@ -73,17 +62,17 @@ const nav_menus = [
       //     { link: '/login', title: 'Login' },
       //   ]
       // },
-    ]
+    ],
   },
 
   {
-    link: '/blog',
-    title: 'Blog',
-    hasDropdown: true,
+    link: "/blog",
+    title: "Blog",
+    hasDropdown: false,
     megamenu: false,
     dropdownItems: [
-        { link: '/blog-2-col-mas', title: 'About' },
-        { link: '/blog-2-col-mas', title: 'Blog' },
+      { link: "/blog-2-col-mas", title: "About" },
+      { link: "/blog-2-col-mas", title: "Blog" },
       // { link: '/blog', title: 'Blog' },
       // { link: '/blog-left-sidebar', title: 'Blog Left Sidebar' },
       // { link: '/blog-no-sidebar', title: 'Blog No Sidebar' },
@@ -91,7 +80,7 @@ const nav_menus = [
       // { link: '/blog-2-col-mas', title: 'Blog 2 Column Masonary' },
       // { link: '/blog-3-col', title: 'Blog 3 Column' },
       // { link: '/blog-details', title: 'Blog Details' },
-    ]
+    ],
   },
 
   // {
@@ -110,9 +99,9 @@ const nav_menus = [
   // },
 
   {
-    link: '/contact',
-    title: 'Contact',
+    link: "/contact",
+    title: "Contact",
   },
-]
+];
 
 export default nav_menus;

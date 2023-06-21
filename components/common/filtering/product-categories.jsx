@@ -1,19 +1,15 @@
-import React from 'react';
-import useGlobalContext from '../../../hooks/use-context';
-
+import React from "react";
+import useGlobalContext from "../../../hooks/use-context";
 
 const categoryData = [
-  {title:'Accessories'},
-  {title:'Clothing'},
-  {title:"Men's"},
-  {title:"Music"},
-  {title:"Decoration"},
-  {title:"Chair"},
-  {title:"Lighting"},
-]
+  { title: "Dining Tables" },
+  { title: "Coffee Tables" },
+  { title: "Miscellaneous" },
+  { title: "All" },
+];
 
 const ProductCategories = () => {
-  const {handleCategoryChange,categoryActive} = useGlobalContext();
+  const { handleCategoryChange, categoryActive } = useGlobalContext();
 
   return (
     <>
@@ -23,11 +19,16 @@ const ProductCategories = () => {
         </div>
         <div className="sidebar__widget-content">
           <div className="categories">
-            <div className='categories__list'>
+            <div className="categories__list">
               <ul>
-                {categoryData.map((category,index) => (
-                  <li className={categoryActive === category.title ? 'active' : ''} 
-                  onClick={()=> handleCategoryChange(category.title)} key={index}>
+                {categoryData.map((category, index) => (
+                  <li
+                    className={
+                      categoryActive === category.title ? "active" : ""
+                    }
+                    onClick={() => handleCategoryChange(category.title)}
+                    key={index}
+                  >
                     {category.title}
                   </li>
                 ))}

@@ -41,7 +41,7 @@ const BlogArea = ({ home_three, h4 }) => {
                 }`}
               >
                 <div className="section__title mb-10">
-                  <h2>Blog Preview</h2>
+                  <h2>Blog</h2>
                 </div>
                 <div className="section__sub-title">
                   <p>

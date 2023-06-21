@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const BreadcrumbContact = ({ img, title, subtitle }) => {
+const BreadcrumbShop = ({ img, title, subtitle }) => {
   return (
     <>
       <section
@@ -27,6 +27,16 @@ const BreadcrumbContact = ({ img, title, subtitle }) => {
                           <a style={{ color: "#ffffff" }}>Home</a>
                         </Link>
                       </li>
+                      <span
+                        style={{
+                          color: "#ffffff",
+                          paddingLeft: "5px",
+                          paddingRight: "5px",
+                        }}
+                      >
+                        {" "}
+                        /{" "}
+                      </span>
                       <li
                         className="breadcrumb-item active"
                         aria-current="page"
@@ -45,4 +55,4 @@ const BreadcrumbContact = ({ img, title, subtitle }) => {
   );
 };
 
-export default BreadcrumbContact;
+export default BreadcrumbShop;
