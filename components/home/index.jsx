@@ -19,7 +19,7 @@ const index = () => {
         <HeroSlider />
         <Banner df={true} />
         <Products />
-        <BannerTwo df={true} />
+        {/* <BannerTwo df={true} /> */}
         {/* <SaleOff /> */}
         {/* <Testimonial /> */}
         {/* <ProductOffer /> */}
