@@ -6,12 +6,12 @@ const footerWidget = [
   {
     id: 1,
     title: "information",
-    footer__links: [{ list: "About" }, { list: "Blog" }],
+    footer__links: [{ list: "Blog", link: "/blog" }],
   },
   {
     id: 2,
     title: "Customer Service",
-    footer__links: [{ list: "Shipping Policy" }, { list: "Contact Us" }],
+    footer__links: [{ list: "Contact Us", link: "/contact" }],
   },
 ];
 
@@ -86,7 +86,9 @@ const Footer = ({ df }) => {
                         <ul>
                           {item.footer__links.map((link, index) => (
                             <li key={index}>
-                              <a href="#">{link.list}</a>
+                              <Link href={link.link}>
+                                <a>{link.list}</a>
+                              </Link>
                             </li>
                           ))}
                         </ul>
@@ -102,7 +104,7 @@ const Footer = ({ df }) => {
           <div className="container">
             <div className="row">
               <div className="col-xl-6 col-lg-7">
-                <div className="footer__copyright">
+                {/* <div className="footer__copyright">
                   <p>
                     Copyright ©{" "}
                     <Link href="/">
@@ -113,7 +115,7 @@ const Footer = ({ df }) => {
                       <a> Theme_pure</a>
                     </Link>
                   </p>
-                </div>
+                </div> */}
               </div>
               <div className="col-xl-6 col-lg-5">
                 <div className="footer__social f-right">

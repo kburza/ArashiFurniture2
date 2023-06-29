@@ -19,38 +19,38 @@ const homeSliderData = [
       </>
     ),
   },
-  {
-    id: 2,
-    bgImg: "/assets/img/slider/03/slider-02.jpg",
-    title: (
-      <>
-        Discover Our <br /> Handcrafted Table Collection
-      </>
-    ),
-    subtitle: (
-      <>
-        Dive into the world of Arashi Furniture's artisan tables, uniquely
-        crafted to transform your space with a blend of nature's marvel, luxury,
-        and unmatched craftsmanship.
-      </>
-    ),
-  },
-  {
-    id: 3,
-    bgImg: "/assets/img/slider/03/slider-03.jpg",
-    title: (
-      <>
-        Explore Our <br /> Artisanal Lifestyle Accessories
-      </>
-    ),
-    subtitle: (
-      <>
-        Elevate your everyday experiences with our beautifully handcrafted
-        charcuterie boards and coasters, imbued with the same artisanal quality
-        and attention to detail as our luxury tables.
-      </>
-    ),
-  },
+  // {
+  //   id: 2,
+  //   bgImg: "/assets/img/slider/03/slider-02.jpg",
+  //   title: (
+  //     <>
+  //       Discover Our <br /> Handcrafted Table Collection
+  //     </>
+  //   ),
+  //   subtitle: (
+  //     <>
+  //       Dive into the world of Arashi Furniture's artisan tables, uniquely
+  //       crafted to transform your space with a blend of nature's marvel, luxury,
+  //       and unmatched craftsmanship.
+  //     </>
+  //   ),
+  // },
+  // {
+  //   id: 3,
+  //   bgImg: "/assets/img/slider/03/slider-03.jpg",
+  //   title: (
+  //     <>
+  //       Explore Our <br /> Artisanal Lifestyle Accessories
+  //     </>
+  //   ),
+  //   subtitle: (
+  //     <>
+  //       Elevate your everyday experiences with our beautifully handcrafted
+  //       charcuterie boards and coasters, imbued with the same artisanal quality
+  //       and attention to detail as our luxury tables.
+  //     </>
+  //   ),
+  // },
 ];
 // slick setting
 const settings = {
