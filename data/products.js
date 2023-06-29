@@ -312,9 +312,10 @@ const products = [
       },
       {
         id: 9,
-        img: "/assets/img/shop/product/product-9.jpg",
+        img: "/assets/img/shop/product/product-big-2.jpg",
         big_2: true,
         images: [
+          { src: "/assets/img/shop/product/product-9.jpg" },
           { src: "/assets/img/shop/product/quick-view/quick-big-9-1.jpg" },
           { src: "/assets/img/shop/product/quick-view/quick-big-9-2.jpg" },
         ],
@@ -435,7 +436,7 @@ const products = [
       {
         id: 13,
         big_3: true,
-        img: "/assets/img/shop/product/product-12.jpg",
+        img: "/assets/img/shop/product/product-big-3.jpg",
         images: [
           { src: "/assets/img/shop/product/product-12.jpg" },
           { src: "/assets/img/shop/product/quick-view/quick-big-12-1.jpg" },

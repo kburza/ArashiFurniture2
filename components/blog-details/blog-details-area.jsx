@@ -1,29 +1,29 @@
-import BlogSidebar from '../common/blog/blog-sidebar';
-import { blogs } from '../../data';
-import BlogForm from '../common/form/blog-form';
-import Link from 'next/link';
+import BlogSidebar from "../common/blog/blog-sidebar";
+import { blogs } from "../../data";
+import BlogForm from "../common/form/blog-form";
+import Link from "next/link";
 
 const reviews = [
   {
-    img: '/assets/img/blog/comments/avater-1.png',
-    name: 'Siarhei Dzenisenka',
-    time: '3 Months Ago',
+    img: "/assets/img/blog/comments/avater-1.png",
+    name: "Siarhei Dzenisenka",
+    time: "3 Months Ago",
     rating: 4,
   },
   {
-    img: '/assets/img/blog/comments/avater-2.png',
-    name: 'Julias Roy',
-    time: '6 Months Ago',
+    img: "/assets/img/blog/comments/avater-2.png",
+    name: "Julias Roy",
+    time: "6 Months Ago",
     rating: 4,
     children: true,
   },
   {
-    img: '/assets/img/blog/comments/avater-3.png',
-    name: 'Arista Williamson',
-    time: '6 Months Ago',
+    img: "/assets/img/blog/comments/avater-3.png",
+    name: "Arista Williamson",
+    time: "6 Months Ago",
     rating: 4,
   },
-]
+];
 
 const BlogDetailsArea = ({ item }) => {
   return (
@@ -31,15 +31,17 @@ const BlogDetailsArea = ({ item }) => {
       <section className="blog__area pt-55">
         <div className="container">
           <div className="row">
-            <div className="col-xl-9 col-lg-8">
-              <div className="postbox__title mb-55">
+            <div className="row justify-content-center">
+              <div className="col-xl-12 col-lg-12">
                 <h1>
-                  <Link href={'/blog'}>
+                  <Link href={"/blog"}>
                     <a>{item.title}</a>
                   </Link>
                 </h1>
                 <div className="blog__meta">
-                  <span>By <a href="#">{item.author}</a></span>
+                  <span>
+                    By <a href="#">{item.author}</a>
+                  </span>
                   <span>/ {item.date}</span>
                 </div>
               </div>
@@ -48,15 +50,40 @@ const BlogDetailsArea = ({ item }) => {
               </div>
               <div className="postbox__wrapper mb-70">
                 <div className="postbox__text mt-65">
-                  <p>Diga, Koma and Torus are three kitchen utensils designed for <span className="highlight theme">Ommo</span>, a new design-oriented brand introduced at the Ambiente show in February 2016. <span className="highlight">Minimalist approach, bright colors, stainless steel and matte plastic</span>, abstract shapes and curved lines are the defining features of these products designed to be extremely functional, user-friendly and fun.</p>
+                  <p>
+                    Diga, Koma and Torus are three kitchen utensils designed for{" "}
+                    <span className="highlight theme">Ommo</span>, a new
+                    design-oriented brand introduced at the Ambiente show in
+                    February 2016.{" "}
+                    <span className="highlight">
+                      Minimalist approach, bright colors, stainless steel and
+                      matte plastic
+                    </span>
+                    , abstract shapes and curved lines are the defining features
+                    of these products designed to be extremely functional,
+                    user-friendly and fun.
+                  </p>
                 </div>
                 <div className="postbox__text">
-                  <p>Diga is a two-color melamine salad bowl where vegetables can be washed, drained and served. The disk at the bottom of the bowl can be turned counterclockwise to drain water when washing vegetables and it can be turned clockwise to lock the drain and hold condiments in the bowl when serving.</p>
+                  <p>
+                    Diga is a two-color melamine salad bowl where vegetables can
+                    be washed, drained and served. The disk at the bottom of the
+                    bowl can be turned counterclockwise to drain water when
+                    washing vegetables and it can be turned clockwise to lock
+                    the drain and hold condiments in the bowl when serving.
+                  </p>
                 </div>
                 <article className="postbox format-quote mt-45 mb-50">
                   <div className="postbox__quote">
                     <blockquote>
-                      <p> <i className="fas fa-quote-right"></i> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. </p>
+                      <p>
+                        {" "}
+                        <i className="fas fa-quote-right"></i> Many desktop
+                        publishing packages and web page editors now use Lorem
+                        Ipsum as their default model text, and a search for
+                        lorem ipsum will uncover many web sites still in their
+                        infancy.{" "}
+                      </p>
                     </blockquote>
                   </div>
                 </article>
@@ -64,11 +91,21 @@ const BlogDetailsArea = ({ item }) => {
                   <img src="/assets/img/blog/blog-details-sm.jpg" alt="" />
                 </div>
                 <div className="postbox__text">
-                  <p>Koma and Torus are two tea infusers, each with an original design and a concealed function. Koma has a round base and a long stainless steel-trimmed handle which offers a comfortable grip and allows.
+                  <p>
+                    Koma and Torus are two tea infusers, each with an original
+                    design and a concealed function. Koma has a round base and a
+                    long stainless steel-trimmed handle which offers a
+                    comfortable grip and allows.
                   </p>
                 </div>
                 <div className="postbox__text">
-                  <p>And the brushed steel cover opens and closes at the touch of a finger to easily fill and empty the infuser. The perfect way to enjoy brewing tea. Torus is donut-shaped and can      cling to any cup. It is accompanied by a case that can contain up to three different diffusers and can be used for dry storage of loose tea.
+                  <p>
+                    And the brushed steel cover opens and closes at the touch of
+                    a finger to easily fill and empty the infuser. The perfect
+                    way to enjoy brewing tea. Torus is donut-shaped and can
+                    cling to any cup. It is accompanied by a case that can
+                    contain up to three different diffusers and can be used for
+                    dry storage of loose tea.
                   </p>
                 </div>
               </div>
@@ -76,28 +113,64 @@ const BlogDetailsArea = ({ item }) => {
                 <div className="row">
                   <div className="col-xl-6 col-lg-6 col-md-6">
                     <div className="postbox__social">
-                      <span>Share to friends:</span>
+                      <span>Share:</span>
                       <ul>
-                        <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i className="fab fa-dribbble"></i></a></li>
-                        <li><a href="#"><i className="fas fa-share-alt"></i></a></li>
+                        <li>
+                          <a
+                            href="https://www.facebook.com/people/Arashi-Art/pfbid02BVniveuPwKeZpfdgXhZqd4iotSQFa1wkTEUmDWigVy7FhPujzmZ2i2TPQv7vvNJul/"
+                            target="_blank"
+                          >
+                            <i className="fab fa-facebook-f"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://www.instagram.com/arashiartdecor/"
+                            target="_blank"
+                          >
+                            <i className="fab fa-instagram"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://www.linkedin.com/in/arashiartdecor/"
+                            target="_blank"
+                          >
+                            <i className="fab fa-linkedin"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://www.tiktok.com/@arashiartdecor"
+                            target="_blank"
+                          >
+                            <i className="fab fa-tiktok"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://twitter.com/arashiartdecor"
+                            target="_blank"
+                          >
+                            <i className="fab fa-twitter"></i>
+                          </a>
+                        </li>
                       </ul>
                     </div>
                   </div>
                   <div className="col-xl-6 col-lg-6 col-md-6">
-                    <div className="postbox__tag f-right">
+                    {/* <div className="postbox__tag f-right">
                       <span>Tags :</span>
                       <a href="#">Furniture,</a>
                       <a href="#">Erentheme,</a>
                       <a href="#">Chair, </a>
                       <a href="#">Decor</a>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
               <div className="postbox__related-title">
-                <h3>You Might Also Like</h3>
+                <h3>Other Blog Posts</h3>
               </div>
               <div className="postbox__related-item">
                 <div className="row">
@@ -118,7 +191,9 @@ const BlogDetailsArea = ({ item }) => {
                             </Link>
                           </h4>
                           <div className="blog__meta">
-                            <span>By <a href="#">{blog.auhtor}</a></span>
+                            <span>
+                              By <a href="#">{blog.auhtor}</a>
+                            </span>
                             <span>/ {blog.date}</span>
                           </div>
                         </div>
@@ -128,7 +203,7 @@ const BlogDetailsArea = ({ item }) => {
                 </div>
               </div>
               <div className="postbox__line mt-65"></div>
-              <div className="postbox__comments pt-90">
+              {/* <div className="postbox__comments pt-90">
                 <div className="postbox__comment-title mb-30">
                   <h3>Comments (32)</h3>
                 </div>
@@ -162,20 +237,18 @@ const BlogDetailsArea = ({ item }) => {
                     ))}
                   </ul>
                 </div>
-              </div>
-              <div className="postbox__line mb-95"></div>
+              </div> */}
+              {/* <div className="postbox__line mb-95"></div>
               <div className="post-comments-form mb-100">
                 <div className="post-comments-title mb-30">
                   <h3>Leave A Reply</h3>
                 </div>
-                {/* blog form start */}
                 <BlogForm />
-                {/* blog form start */}
-              </div>
+              </div> */}
             </div>
-            <div className="col-xl-3 col-lg-4">
+            {/* <div className="col-xl-3 col-lg-4">
               <BlogSidebar />
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
