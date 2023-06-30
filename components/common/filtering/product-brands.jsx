@@ -22,7 +22,7 @@ const ProductBrands = () => {
           </div>
         </div>
         <div className="reset-button mt-20">
-          <button onClick={resetFiltering}>Reset Filter</button>
+          <button onClick={resetFiltering}>Reset Filters</button>
         </div>
       </div>
     </>

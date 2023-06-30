@@ -5,7 +5,6 @@ const categoryData = [
   { title: "Dining Tables" },
   { title: "Coffee Tables" },
   { title: "Miscellaneous" },
-  { title: "All" },
 ];
 
 const ProductCategories = () => {

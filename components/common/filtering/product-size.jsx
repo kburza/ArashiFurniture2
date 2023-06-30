@@ -3,7 +3,7 @@ import useGlobalContext from "../../../hooks/use-context";
 
 const ProductSize = () => {
   const { handleProductSizes, sizeActive } = useGlobalContext();
-  const sizes = ["S", "M", "L", "XL"];
+  const sizes = ["S", "M", "L"];
   return (
     <>
       <div className="sidebar__widget mb-55">
